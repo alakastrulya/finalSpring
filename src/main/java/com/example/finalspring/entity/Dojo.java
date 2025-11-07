@@ -21,7 +21,6 @@ public class Dojo {
 
     private String name;
 
-
-    @ManyToMany(mappedBy = "dojo")
+    @ManyToMany(mappedBy = "dojos")
     List<Samurai> samuraiList;
 }
