@@ -8,8 +8,8 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Getter
 @Setter
+@Getter
 @Builder
 public class DojoDto {
     private Long id;
