@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
+
 @RequiredArgsConstructor
 @Service
 
@@ -33,14 +35,17 @@ public class KatanaServiceImpl implements KatanaService {
     @Override
     public KatanaDto updateKatana(Long id, KatanaDto katanaDto) {
         Katana katana = katanaRepository.findById(id).orElse(null);
-        katana.setId(1L);
-        katana.setAge(25);
-        katana.setName("Takeda Shingen");
-        katana.setBySwordsman("Katana Master");
-        katanaRepository.save(katana);
+        if(!Objects.isNull(katana)){
+            katana.setName(katanaDto.getName());
+           //check
+            katana.setAge(katanaDto.getAge());
+            katana.setBySwordsman(katanaDto.getBySwordsman());
+            return katanaMapper.toDto(katanaRepository.save(katana));
 
-        Katana katana1 = katanaRepository.findById(id).orElse(null);
-        return katanaMapper.toDto(katana1);
+
+        } else {
+            throw new RuntimeException("Katana with id " + id + " not found");
+        }
     }
 
     @Override

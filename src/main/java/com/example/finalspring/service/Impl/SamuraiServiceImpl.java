@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @RequiredArgsConstructor
 @Service
@@ -33,12 +34,12 @@ public class SamuraiServiceImpl implements SamuraiService {
     @Override
     public SamuraiDto updateSamurai(Long id, SamuraiDto samuraiDto) {
         Samurai samurai = samuraiRepository.findById(id).orElse(null);
-        samurai.setId(113L);
-        samurai.setName("Kakashi");
-        samurai.setAge(25);
-        samuraiRepository.save(samurai);
-        Samurai samurai1 = samuraiRepository.findById(id).orElse(null);
-        return samuraiMapper.toDto(samurai1);
+        if(!Objects.isNull(samurai)){
+            samurai.setName(samuraiDto.getNameDto());
+            samurai.setAge(samuraiDto.getAgeDto());
+            return samuraiMapper.toDto(samuraiRepository.save(samurai));
+        }
+        throw new RuntimeException("Samurai with id " + id + " not found");
     }
 
     @Override
