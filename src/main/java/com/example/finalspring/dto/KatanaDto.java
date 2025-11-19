@@ -14,13 +14,9 @@ import lombok.Setter;
 @Builder
 public class KatanaDto {
     private Long id;
-
-    private String name;
-
     private int age;
-
+    private String name;
     private String bySwordsman;
-
     private Samurai samurai;
 
 }
