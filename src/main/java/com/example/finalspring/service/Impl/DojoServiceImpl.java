@@ -27,6 +27,7 @@ public class DojoServiceImpl implements DojoService {
 
     @Override
     public DojoDto addDojo(DojoDto dojoDto) {
+
         return dojoMapper.toDto(dojoRepository.save(dojoMapper.toEntity(dojoDto)));
     }
 
@@ -35,8 +36,7 @@ public class DojoServiceImpl implements DojoService {
 
         Dojo dojo = dojoRepository.findById(id).orElse(null);
         if (!Objects.isNull(dojo)){
-            dojo.setName(dojoDto.getName());
-//            dojo.setSamuraiList(dojo.getSamuraiList());
+            dojo.setName(dojoDto.getNameDto());
             return dojoMapper.toDto(dojoRepository.save(dojo));
         }else {
             throw new RuntimeException("Dojo with id " + id + " not found");
@@ -45,11 +45,12 @@ public class DojoServiceImpl implements DojoService {
 
     @Override
     public boolean deleteDojo(Long id) {
-        Dojo dojo = dojoRepository.findById(id).orElse(null);
-        if (dojo == null){
+        if (!dojoRepository.existsById(id)){
             return false;
+        }else {
+            dojoRepository.deleteById(id);
+            return true;
         }
-        dojoRepository.delete(dojo);
-        return true;
+
     }
 }
