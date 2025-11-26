@@ -65,7 +65,6 @@ public class KatanaServiceImpl implements KatanaService {
         katana.setAge(katanaDto.getAgeDto());
         katana.setBySwordsman(katanaDto.getBySwordsmanDto());
 
-
         Long samuraiId = katanaDto.getSamuraiDto().getId();
         Samurai samurai;
         if (samuraiId != null && samuraiRepository.existsById(samuraiId)) {
