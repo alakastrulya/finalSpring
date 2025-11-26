@@ -7,15 +7,18 @@ import org.mapstruct.Mapping;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring",uses =  DojoMapper.class)
 public interface SamuraiMapper {
 
         @Mapping(target = "ageDto", source = "age")
         @Mapping(target = "nameDto", source = "name")
         SamuraiDto toDto(Samurai samurai);
-
         @Mapping(target = "age", source = "ageDto")
         @Mapping(target = "name", source = "nameDto")
         Samurai toEntity(SamuraiDto samuraiDto);
+        @Mapping(target = "dojosDto", source = "dojos")
+        @Mapping(target = "dojos", source = "dojosDto")
         List<SamuraiDto> toDtoList(List<Samurai> samuraiList);
+        List<Samurai> toEntityList(List<SamuraiDto> samuraiDtoList);
+
 }
