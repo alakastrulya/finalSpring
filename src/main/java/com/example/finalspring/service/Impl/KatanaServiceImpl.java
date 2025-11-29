@@ -39,15 +39,15 @@ public class KatanaServiceImpl implements KatanaService {
         savekatanaDto.setNameDto(katanaDto.getNameDto());
         savekatanaDto.setBySwordsmanDto(katanaDto.getBySwordsmanDto());
 
-            if (samuraiRepository.findById(katanaDto.getSamuraiDto().getId()).orElse(null) == null) {
-                Samurai samurai = new Samurai();
-                samurai.setName(katanaDto.getSamuraiDto().getNameDto());
-                samurai.setAge(katanaDto.getSamuraiDto().getAgeDto());
-                savekatanaDto.setSamuraiDto(samuraiMapper.toDto(samuraiRepository.save(samurai)));
+        if (samuraiRepository.findById(katanaDto.getSamuraiDto().getId()).orElse(null) == null) {
+            Samurai samurai = new Samurai();
+            samurai.setName(katanaDto.getSamuraiDto().getNameDto());
+            samurai.setAge(katanaDto.getSamuraiDto().getAgeDto());
+            savekatanaDto.setSamuraiDto(samuraiMapper.toDto(samuraiRepository.save(samurai)));
 
-            }else{
-                savekatanaDto.setSamuraiDto(katanaDto.getSamuraiDto());
-            }
+        }else{
+            savekatanaDto.setSamuraiDto(katanaDto.getSamuraiDto());
+        }
 
 
 
