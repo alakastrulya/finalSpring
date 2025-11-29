@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 public class DojoDto {
     private Long id;
-    private String name;
+    private String nameDto;
 
     List<Samurai> samuraiList;
 }
