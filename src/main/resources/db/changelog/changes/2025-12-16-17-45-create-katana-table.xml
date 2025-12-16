@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="create-katana-table" author="alakastrulya">
+        <createTable tableName="katana">
+            <column name="id" type="bigserial">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar"/>
+            <column name="age" type="int"/>
+            <column name="swordman" type="varchar"/>
+            <column name="samurai_id" type="bigint"/>
+        </createTable>
+
+        <addForeignKeyConstraint constraintName="fk_katana_samurai"
+                                 baseTableName="katana"
+                                 baseColumnNames="samurai_id"
+                                 referencedTableName="samurai"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"/>
+    </changeSet>
+</databaseChangeLog>
