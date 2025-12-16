@@ -21,5 +21,4 @@ public interface KatanaMapper {
     @Mapping(target = "samurai", source = "samuraiDto")
     Katana toEntity(KatanaDto katanaDto);
     List<KatanaDto> toDtoList(List<Katana> katanaList);
-    List<Katana> toEntityList(List<KatanaDto> katanaDtos);
 }
