@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="create-samurai-dojos-join-table" author="alakastrulya">
+        <createTable tableName="samurai_dojos">
+            <column name="samurai_id" type="bigserial">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dojos_id" type="bigserial">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey tableName="samurai_dojos"
+                       columnNames="samurai_id,dojos_id"/>
+
+        <addForeignKeyConstraint constraintName="fk_samurai_dojos_samurai"
+                                 baseTableName="samurai_dojos"
+                                 baseColumnNames="samurai_id"
+                                 referencedTableName="samurai"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"/>
+
+        <addForeignKeyConstraint constraintName="fk_samurai_dojos_dojo"
+                                 baseTableName="samurai_dojos"
+                                 baseColumnNames="dojos_id"
+                                 referencedTableName="dojo"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"/>
+    </changeSet>
+</databaseChangeLog>

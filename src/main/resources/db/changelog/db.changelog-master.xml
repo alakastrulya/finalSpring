@@ -5,5 +5,9 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
     <include file="changes/2025-12-16-17-22-create-dojo-tables.xml" relativeToChangelogFile="true"/>
+    <include file="changes/2025-12-16-17-44-create-samurai-table.xml" relativeToChangelogFile="true"/>
+    <include file="changes/2025-12-16-17-45-create-katana-table.xml" relativeToChangelogFile="true"/>
+    <include file="changes/2025-12-16-17-46-create-join-table.xml" relativeToChangelogFile="true"/>
+
 
 </databaseChangeLog>
