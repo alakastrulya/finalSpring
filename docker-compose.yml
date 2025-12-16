@@ -2,10 +2,31 @@ services:
 
   database-service:
     image: 'postgres'
-    container_name: 'my-database-container'
+    container_name: 'final-database-container'
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=postgres
+      - POSTGRES_DB=final
     ports:
       - 2345:5432
+
+  backend-service:
+    build: .
+    container_name: 'final-backend-container'
+    depends_on: 'database-service'
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://test-database-service:5432/final
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    ports:
+      - 3333:9991
+
+  test-database-service:
+    image: 'postgres'
+    container_name: 'final-test-database-container'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=finalTest
+    ports:
+      - 4567:5432
