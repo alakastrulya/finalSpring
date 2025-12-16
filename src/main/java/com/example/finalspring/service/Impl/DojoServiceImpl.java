@@ -1,11 +1,16 @@
 package com.example.finalspring.service.Impl;
 import com.example.finalspring.dto.DojoDto;
+import com.example.finalspring.dto.SamuraiDto;
 import com.example.finalspring.entity.Dojo;
+import com.example.finalspring.entity.Samurai;
 import com.example.finalspring.mapper.DojoMapper;
 import com.example.finalspring.repository.DojoRepository;
+import com.example.finalspring.repository.SamuraiRepository;
 import com.example.finalspring.service.DojoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -13,6 +18,7 @@ import java.util.Objects;
 @Service
 public class DojoServiceImpl implements DojoService {
     private final DojoRepository dojoRepository;
+    private final SamuraiRepository samuraiRepository;
     private final DojoMapper dojoMapper;
 
     @Override
@@ -27,30 +33,37 @@ public class DojoServiceImpl implements DojoService {
 
     @Override
     public DojoDto addDojo(DojoDto dojoDto) {
-
-        return dojoMapper.toDto(dojoRepository.save(dojoMapper.toEntity(dojoDto)));
+        Dojo dojo = dojoMapper.toEntity(dojoDto);
+        dojo.setName(dojoDto.getNameDto());
+        return dojoMapper.toDto(dojoRepository.save(dojo));
     }
 
     @Override
     public DojoDto updateDojo(Long id, DojoDto dojoDto) {
-
         Dojo dojo = dojoRepository.findById(id).orElse(null);
         if (!Objects.isNull(dojo)){
             dojo.setName(dojoDto.getNameDto());
             return dojoMapper.toDto(dojoRepository.save(dojo));
         }else {
-            throw new RuntimeException("Dojo with id " + id + " not found");
+            throw new RuntimeException("Dojo not found");
         }
     }
 
     @Override
     public boolean deleteDojo(Long id) {
-        if (!dojoRepository.existsById(id)){
+        Dojo dojo = dojoRepository.findById(id).orElse(null);
+        if (dojo == null) {
             return false;
-        }else {
-            dojoRepository.deleteById(id);
-            return true;
         }
 
+        List<Samurai> samurais = samuraiRepository.findAllByDojosContaining(dojo);
+        for (Samurai samurai : samurais) {
+            samurai.getDojos().remove(dojo);
+            samuraiRepository.save(samurai);
+        }
+
+        dojoRepository.deleteById(id);
+        return true;
     }
+
 }

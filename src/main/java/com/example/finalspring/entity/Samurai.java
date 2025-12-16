@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -24,6 +25,10 @@ public class Samurai {
     private int age;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    List<Dojo> dojos;
-
+    @JoinTable(
+            name = "samurai_dojos",
+            joinColumns = @JoinColumn(name = "samurai_id"),
+            inverseJoinColumns = @JoinColumn(name = "dojos_id")
+    )
+    private List<Dojo> dojos = new ArrayList<>();
 }

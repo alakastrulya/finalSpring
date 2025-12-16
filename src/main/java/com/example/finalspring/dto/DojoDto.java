@@ -17,5 +17,4 @@ public class DojoDto {
     private Long id;
     private String nameDto;
 
-    List<SamuraiDto> samuraiList;
 }

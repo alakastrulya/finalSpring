@@ -1,12 +1,15 @@
 package com.example.finalspring.serviceTest;
 
 import com.example.finalspring.dto.DojoDto;
+import com.example.finalspring.dto.SamuraiDto;
 import com.example.finalspring.service.DojoService;
+import com.example.finalspring.service.SamuraiService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -23,6 +26,8 @@ public class DojoServiceTest {
 
     @Test
     void getAll(){
+        dojoService.addDojo(DojoDto.builder().nameDto("Test").build());
+
         List<DojoDto> list =dojoService.getAll();
 
         assertNotNull(list);
@@ -112,6 +117,12 @@ public class DojoServiceTest {
 
     @Test
     void delete(){
+        List<DojoDto> list = dojoService.getAll();
+
+        if (list.isEmpty()) {
+            DojoDto created = dojoService.addDojo(DojoDto.builder().nameDto("deleting").build());
+            list = dojoService.getAll();
+        }
         Random random = new Random();
         int randomIndex = random.nextInt(dojoService.getAll().size());
 
@@ -123,7 +134,4 @@ public class DojoServiceTest {
         assertNull(checkAnimals);
 
     }
-
-    //нужно добавить проверку листа внутри него
-
 }

@@ -49,8 +49,6 @@ public class KatanaServiceImpl implements KatanaService {
             savekatanaDto.setSamuraiDto(katanaDto.getSamuraiDto());
         }
 
-
-
         return katanaMapper.toDto(katanaRepository.save(katanaMapper.toEntity(savekatanaDto)));
     }
 
