@@ -1,0 +1,4 @@
+* [33m66a8d50[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/dto[m[33m, [m[1;31morigin/feature/dto[m[33m)[m adding DTO
+* [33mfd0a291[m[33m ([m[1;31morigin/feature/entities-and-db[m[33m, [m[1;32mfeature/entities-and-db[m[33m)[m fix error that was connect with name of mapped by
+* [33m575798b[m add db configuration to application.properties
+* [33m5bc53a0[m adding first 3 entity
