@@ -1,0 +1,11 @@
+services:
+
+  database-service:
+    image: 'postgres'
+    container_name: 'my-database-container'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - 2345:5432
