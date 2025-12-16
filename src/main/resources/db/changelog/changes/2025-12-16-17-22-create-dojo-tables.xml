@@ -4,6 +4,13 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
-    <include file="changes/2025-12-16-17-22-create-dojo-tables.xml" relativeToChangelogFile="true"/>
+    <changeSet id="create-dojo-table" author="alakastrulya">
+        <createTable tableName="dojo">
+            <column name="id" type="bigserial">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar"/>
+        </createTable>
 
+    </changeSet>
 </databaseChangeLog>
