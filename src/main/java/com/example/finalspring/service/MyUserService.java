@@ -44,4 +44,31 @@ public class MyUserService implements UserDetailsService {
             userRep.save(user);
         }
     }
+
+    public void createAdminIfNotExists() {
+        User admin = userRep.findByLogin("admin");
+        if (admin == null) {
+            Permission adminRole = permissionRep.findByName("ROLE_ADMIN");
+            if (adminRole == null) {
+                adminRole = new Permission();
+                adminRole.setName("ROLE_ADMIN");
+                adminRole = permissionRep.save(adminRole);
+            }
+
+            Permission userRole = permissionRep.findByName("ROLE_USER");
+            if (userRole == null) {
+                userRole = new Permission();
+                userRole.setName("ROLE_USER");
+                userRole = permissionRep.save(userRole);
+            }
+
+            User newAdmin = new User();
+            newAdmin.setLogin("admin");
+            newAdmin.setPassword(passwordEncoder.encode("admin123"));
+            newAdmin.setName("Administrator");
+            newAdmin.setPermissions(List.of(adminRole, userRole));
+
+            userRep.save(newAdmin);
+        }
+    }
 }
