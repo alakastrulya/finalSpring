@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="create-user-permission-join-table" author="alakastrulya">
+        <createTable tableName="t_user_permissions">
+            <column name="user_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="permission_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey tableName="t_user_permissions" columnNames="user_id,permission_id"/>
+
+        <addForeignKeyConstraint constraintName="fk_user_permissions_user"
+                                 baseTableName="t_user_permissions"
+                                 baseColumnNames="user_id"
+                                 referencedTableName="t_user"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"/>
+
+        <addForeignKeyConstraint constraintName="fk_user_permissions_permission"
+                                 baseTableName="t_user_permissions"
+                                 baseColumnNames="permission_id"
+                                 referencedTableName="t_permission"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"/>
+    </changeSet>
+</databaseChangeLog>
