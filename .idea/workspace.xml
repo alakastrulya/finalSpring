@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b2d315b-77b9-45a7-832a-b008e3f0774c" name="Changes" comment="Sandu added Service(updated UPDATE), Controller(Katana, Samurai)" />
+    <list default="true" id="8b2d315b-77b9-45a7-832a-b008e3f0774c" name="Changes" comment="Sandu added Service(updated UPDATE), Controller(Katana, Samurai)">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalspring/mapper/KatanaMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalspring/mapper/KatanaMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalspring/mapper/SamuraiMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalspring/mapper/SamuraiMapper.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,14 +18,22 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Spring Boot.FinalSpringApplication1.executor": "Run",
     "git-widget-placeholder": "feature/mapper",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.FinalSpringApplication1">
     <configuration name="FinalSpringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="finalSpring" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.finalspring.FinalSpringApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FinalSpringApplication1" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="mid" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.finalspring.FinalSpringApplication1" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

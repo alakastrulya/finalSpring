@@ -7,7 +7,7 @@ import org.mapstruct.Mapping;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring",uses =  DojoMapper.class)
+@Mapper(componentModel = "spring", uses = { DojoMapper.class })
 public interface SamuraiMapper {
 
         @Mapping(target = "ageDto", source = "age")
