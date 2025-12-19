@@ -41,8 +41,6 @@ public class KatanaServiceImpl implements KatanaService {
 
         if (samuraiRepository.findById(katanaDto.getSamuraiDto().getId()).orElse(null) == null) {
             Samurai samurai = new Samurai();
-            samurai.setName(katanaDto.getSamuraiDto().getNameDto());
-            samurai.setAge(katanaDto.getSamuraiDto().getAgeDto());
             savekatanaDto.setSamuraiDto(samuraiMapper.toDto(samuraiRepository.save(samurai)));
 
         }else{
@@ -66,9 +64,6 @@ public class KatanaServiceImpl implements KatanaService {
         Samurai samurai;
         if (samuraiId != null && samuraiRepository.existsById(samuraiId)) {
             samurai = samuraiRepository.findById(samuraiId).get();
-            samurai.setName(katanaDto.getSamuraiDto().getNameDto());
-            samurai.setAge(katanaDto.getSamuraiDto().getAgeDto());
-            samurai = samuraiRepository.save(samurai);
         } else {
             samurai = new Samurai();
             samurai.setName(katanaDto.getSamuraiDto().getNameDto());

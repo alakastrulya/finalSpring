@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b2d315b-77b9-45a7-832a-b008e3f0774c" name="Changes" comment="Sandu added Service(updated UPDATE), Controller(Katana, Samurai)" />
+    <list default="true" id="8b2d315b-77b9-45a7-832a-b008e3f0774c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalspring/service/Impl/KatanaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalspring/service/Impl/KatanaServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,11 +20,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "feature/mapper",
+    "Docker.docker-compose.yml.backend-service: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.database-service: Compose Deployment.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "Spring Boot.FinalSpringApplication1.executor": "Run",
+    "git-widget-placeholder": "feature/services-controllers",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Docker.docker-compose.yml.backend-service: Compose Deployment">
     <configuration name="FinalSpringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="finalSpring" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.finalspring.FinalSpringApplication" />
@@ -27,6 +39,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FinalSpringApplication1" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="mid" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.finalspring.FinalSpringApplication1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.backend-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="backend-service" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.database-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="database-service" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yml.backend-service: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.database-service: Compose Deployment" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="StructureViewState">
     <option name="selectedTab" value="Logical" />
