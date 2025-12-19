@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b2d315b-77b9-45a7-832a-b008e3f0774c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalspring/service/Impl/KatanaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalspring/service/Impl/KatanaServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/finalspring/serviceTest/KatanaServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/finalspring/serviceTest/KatanaServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/finalspring/serviceTest/SamuraiServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/finalspring/serviceTest/SamuraiServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,16 +22,63 @@
   "keyToString": {
     "Docker.docker-compose.yml.backend-service: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.database-service: Compose Deployment.executor": "Run",
+    "Maven.mid [clean].executor": "Run",
+    "Maven.mid [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "Spring Boot.FinalSpringApplication1.executor": "Run",
-    "git-widget-placeholder": "feature/services-controllers",
+    "git-widget-placeholder": "docker",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.backend-service: Compose Deployment">
+  <component name="RunManager" selected="JUnit.SamuraiServiceTest">
+    <configuration name="DojoServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mid" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.finalspring.serviceTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.finalspring.serviceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.example.finalspring.serviceTest.DojoServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KatanaServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mid" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.finalspring.serviceTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.finalspring.serviceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.example.finalspring.serviceTest.KatanaServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SamuraiServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mid" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.finalspring.serviceTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.finalspring.serviceTest" />
+      <option name="MAIN_CLASS_NAME" value="com.example.finalspring.serviceTest.SamuraiServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FinalSpringApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="finalSpring" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.finalspring.FinalSpringApplication" />
@@ -47,7 +94,9 @@
       </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="docker-compose.yml.backend-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -78,6 +127,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SamuraiServiceTest" />
+        <item itemvalue="JUnit.KatanaServiceTest" />
+        <item itemvalue="JUnit.DojoServiceTest" />
         <item itemvalue="Docker.docker-compose.yml.backend-service: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.database-service: Compose Deployment" />
       </list>
@@ -88,5 +140,9 @@
   </component>
   <component name="TaskManager">
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add fixes to service" />
+    <option name="LAST_COMMIT_MESSAGE" value="add fixes to service" />
   </component>
 </project>
