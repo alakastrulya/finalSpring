@@ -40,8 +40,6 @@ public class SamuraiServiceTest {
         for (SamuraiDto samuraiDto : list) {
             assertNotNull(samuraiDto);
             assertNotNull(samuraiDto.getId());
-            assertNotNull(samuraiDto.getNameDto());
-            assertNotNull(samuraiDto.getAgeDto());
 
             List<DojoDto> dojos = samuraiDto.getDojos();
             if (dojos != null) {

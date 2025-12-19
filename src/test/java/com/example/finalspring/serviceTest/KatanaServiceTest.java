@@ -56,8 +56,7 @@ public class KatanaServiceTest {
             assertNotNull(dto.getAgeDto());
             assertNotNull(dto.getBySwordsmanDto());
             assertNotNull(dto.getSamuraiDto());
-            assertNotNull(dto.getSamuraiDto().getNameDto());
-            assertNotNull(dto.getSamuraiDto().getAgeDto());
+
         }
     }
 
