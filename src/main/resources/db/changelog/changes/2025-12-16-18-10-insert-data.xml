@@ -6,15 +6,12 @@
 
     <changeSet id="insert" author="alakastrulya">
         <insert tableName="dojo">
-            <column name="id" value="1"/>
             <column name="name" value="Якудза"/>
         </insert>
         <insert tableName="dojo">
-            <column name="id" value="2"/>
             <column name="name" value="Edo"/>
         </insert>
         <insert tableName="dojo">
-            <column name="id" value="3"/>
             <column name="name" value="Нарутонын уйы"/>
         </insert>
     </changeSet>
@@ -22,17 +19,14 @@
 
     <changeSet id="insert-samurai" author="alakastrulya">
         <insert tableName="samurai">
-            <column name="id" value="1"/>
             <column name="name" value="Boruto"/>
             <column name="age" value="60"/>
         </insert>
         <insert tableName="samurai">
-            <column name="id" value="2"/>
             <column name="name" value="Another samurai"/>
             <column name="age" value="38"/>
         </insert>
         <insert tableName="samurai">
-            <column name="id" value="3"/>
             <column name="name" value="Sakura"/>
             <column name="age" value="35"/>
         </insert>
@@ -67,21 +61,18 @@
 
     <changeSet id="insert-katanas" author="alakastrulya">
         <insert tableName="katana">
-            <column name="id" value="1"/>
             <column name="name" value="Hongo"/>
             <column name="age" value="700"/>
             <column name="swordman" value="Sushiman"/>
             <column name="samurai_id" value="1"/>
         </insert>
         <insert tableName="katana">
-            <column name="id" value="2"/>
             <column name="name" value="Dasai"/>
             <column name="age" value="900"/>
             <column name="swordman" value="Minamoto"/>
             <column name="samurai_id" value="2"/>
         </insert>
         <insert tableName="katana">
-            <column name="id" value="3"/>
             <column name="name" value="Зеницу"/>
             <column name="age" value="800"/>
             <column name="swordman" value="Мечник"/>

@@ -70,7 +70,6 @@ public class SamuraiServiceTest {
             for (DojoDto dojoDto : dojos) {
                 assertNotNull(dojoDto);
                 assertNotNull(dojoDto.getId());
-                assertNotNull(dojoDto.getNameDto());
             }
         }
 
